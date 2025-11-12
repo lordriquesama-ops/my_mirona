@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mirona Hotel - Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#2F4F4F',
+              'charcoal-light': '#36454F',
+              'satin-gold': '#CFB53B',
+              ivory: '#FFFFF0',
+              'deep-navy': '#000080',
+              'burgundy': '#800020',
+            },
+            fontFamily: {
+              serif: ['Cormorant', 'serif'],
+              sans: ['Lato', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media (max-width: 767px) {
+        .responsive-table thead {
+          display: none;
+        }
+        .responsive-table tr {
+          display: block;
+          margin-bottom: 1rem;
+          border: 1px solid #e5e7eb; /* gray-200 */
+          border-radius: 0.5rem;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-md */
+          overflow: hidden;
+          background-color: white;
+        }
+        .responsive-table tr:hover {
+            background-color: #fcf9e9; /* satin-gold/10 */
+        }
+        .responsive-table td {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem;
+          border-bottom: 1px solid #f3f4f6; /* gray-100 */
+          text-align: right;
+        }
+        .responsive-table td:last-child {
+          border-bottom: 0;
+        }
+        .responsive-table td::before {
+          content: attr(data-label);
+          font-weight: 700;
+          text-align: left;
+          color: #2F4F4F; /* charcoal */
+          padding-right: 1rem;
+        }
+      }
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        .printable-area, .printable-area * {
+          visibility: visible;
+        }
+        .printable-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .no-print {
+          display: none;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.553.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-ivory font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
